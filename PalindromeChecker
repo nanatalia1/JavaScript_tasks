@@ -1,0 +1,10 @@
+function palindrome(str) {
+  let newStr=str.replace(/\s/g,'');
+  newStr=newStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+  newStr=newStr.toLowerCase();
+  let Strnew=newStr.split("").reverse().join("");
+  if(newStr==Strnew) return true;
+  return false;
+}
+
+palindrome("eye for me");
