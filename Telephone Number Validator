@@ -1,0 +1,16 @@
+function telephoneCheck(str) {
+  let format1 = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  let format2 =/^1[ ]?\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  let wrong1 = /^(\d{3})\)[- ]?(\d{3})[- ]?(\d{4})$/;
+  let wrong2 = /^\((\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
+  let wrong3 =/^1[ ]?(\d{3})\)[- ]?(\d{3})[- ]?(\d{4})$/;
+  let wrong4 = /^1[ ]?^\((\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
+  if(str.match(wrong1)||str.match(wrong2)||str.match(wrong3)||str.match(wrong4)) return false;
+  if(str.match(format1)||str.match(format2))return true;
+ 
+  
+  return false;
+ 
+}
+
+telephoneCheck("555-555-5555");
