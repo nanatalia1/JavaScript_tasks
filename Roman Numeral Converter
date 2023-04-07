@@ -1,0 +1,39 @@
+function convertSingleNum(id1, dig){
+  const romans = [["I", "IV", "V", "IX"], 
+  ["X", "XL", "L", "XC"], 
+  ["C", "CD", "D", "CM"], 
+  "M"];
+}
+
+function convertToRoman(number) {
+  const romans = [["I", "IV", "V", "IX"], 
+  ["X", "XL", "L", "XC"], 
+  ["C", "CD", "D", "CM"], 
+  "M"];
+  let num = number.toString();
+  let output="";
+  let tab=num.length-1;
+  for( let i=0;i<num.length;i++){
+    let text="";
+    
+    let dig=num[i];
+    let id=0;
+    for( let j=0;j<dig;j++){
+        text += romans[tab][id];
+        if(j==3) {
+          text = romans[tab][1];
+        }
+        if(j==4) {
+          text = romans[tab][2];
+        }
+        if(j==8) {
+          text = romans[tab][3];
+        }
+    }
+    tab--;
+    id=0;
+    output+=text;
+  }
+  return output;
+}
+console.log(convertToRoman(2));
